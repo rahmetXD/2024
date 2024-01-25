@@ -60,13 +60,12 @@ async def start(event):
         f"👋 Merhaba {user.first_name}, **{bot_name}!**\n\n"
         "⭐️ Benim Sayemde Gruptaki Üyeleri Kolayca Etiketleye Bilirsiniz, "
         "Bir Çok İşlevsel Komutlarım Vardır Hepsi Size Hizmet Vermek İçindir.\n\n"
-        "💛 Ben Deniz Ve Senanın Miniğiyim!\n\n "
         "⚙️ Butonları Kullanarak Botu Yönetebilirsin, "
         "Komutları Kullanmak İçin Grubuna Ekleyip Boş Yetki Vermen Yeterlidir.",
         buttons=[
             [Button.inline("📚 Komutlar", data="help")],
-            [Button.url('👩🏼 Annem', 'https://t.me/deniziinkizi')],
-            [Button.url('👨 Babam', 'https://t.me/whatdediingulum')],
+            [Button.url('👨‍💻 Developers, 'https://t.me/deniziinkizi')],
+            [Button.url('🤖 Channel', 'https://t.me/whatdediingulum')],
         ],
         link_preview=False
     )
@@ -103,13 +102,12 @@ async def help(event):
       f"👋 Merhaba {user.first_name}, **{bot_name}!**\n\n"
         "⭐️ Benim Sayemde Gruptaki Üyeleri Kolayca Etiketleye Bilirsiniz, "
         "Bir Çok İşlevsel Komutlarım Vardır Hepsi Size Hizmet Vermek İçindir.\n\n"
-        "💛 Ben Deniz Ve Senanın Miniğiyim! "
         "⚙️ Butonları Kullanarak Botu Yönetebilirsin, "
         "Komutları Kullanmak İçin Grubuna Ekleyip Boş Yetki Vermen Yeterlidir.",
         buttons=[
             [Button.inline("📚 Komutlar", data="help")],
-            [Button.url('👩🏼 Annem', 'https://t.me/deniziinkizi')],
-            [Button.url('👨 Babam', 'https://t.me/whatdediingulum')],
+            [Button.url('👨‍💻 Developers, 'https://t.me/deniziinkizi')],
+            [Button.url('🤖 Channel', 'https://t.me/whatdediingulum')],
         ],
         link_preview=False
     )
