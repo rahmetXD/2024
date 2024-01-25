@@ -64,8 +64,8 @@ async def start(event):
         "Komutları Kullanmak İçin Grubuna Ekleyip Boş Yetki Vermen Yeterlidir.",
         buttons=[
             [Button.inline("📚 Komutlar", data="help")],
-            [Button.url('👨‍💻 Developers, 'https://t.me/deniziinkizi')],
-            [Button.url('🤖 Channel', 'https://t.me/whatdediingulum')],
+            [Button.url('👨‍💻 Developers, 'https://t.me/lusttqw')],
+            [Button.url('🤖 Channel', 'https://t.me/laisbots')],
         ],
         link_preview=False
     )
@@ -106,8 +106,8 @@ async def help(event):
         "Komutları Kullanmak İçin Grubuna Ekleyip Boş Yetki Vermen Yeterlidir.",
         buttons=[
             [Button.inline("📚 Komutlar", data="help")],
-            [Button.url('👨‍💻 Developers, 'https://t.me/deniziinkizi')],
-            [Button.url('🤖 Channel', 'https://t.me/whatdediingulum')],
+            [Button.url('👨‍💻 Developers, 'https://t.me/@lusttqw')],
+            [Button.url('🤖 Channel', 'https://t.me/laisbots')],
         ],
         link_preview=False
     )
