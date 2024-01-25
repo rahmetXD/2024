@@ -52,23 +52,64 @@ etiketuye = []
 rxyzdev_tagTot = {}
 rxyzdev_initT = {}
 
+import random, os, logging, asyncio
+from telethon import Button
+from telethon import TelegramClient, events
+from telethon.sessions import StringSession
+from telethon.tl.types import ChannelParticipantsAdmins
+from asyncio import sleep
+from Config import Config
+import time
+import random
+from telethon.tl import types
+from telethon import Button
+import asyncio
+import ping3
+
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(name)s - [%(levelname)s] - %(message)s'
+)
+LOGGER = logging.getLogger(__name__)
+
+api_id = Config.API_ID
+api_hash = Config.API_HASH
+bot_token = Config.BOT_TOKEN
+bot_username = Config.BOT_USERNAME
+support = Config.SUPPORT_CHAT
+owner = Config.OWNER_USERNAME
+bot_name = Config.BOT_NAME
+
+
+SUDO_USERS = Config.SUDO_USERS
+
+client = TelegramClient('client', api_id, api_hash).start(bot_token=bot_token)
+
+anlik_calisan = []
+
+tekli_calisan = []
+
+ozel_list = [1948748468]
+anlik_calisan = []
+grup_sayi = []
+etiketuye = []
+rxyzdev_tagTot = {}
+rxyzdev_initT = {}
+
+
 @client.on(events.NewMessage(pattern="^/start$"))
 async def start(event):
-    user = await event.client.get_entity(event.sender_id)
+  await event.reply("❤️ Merhaba Ben **Sirius Tagger**\n🏷 Gruplarda Kullanıcıları Etiketlemek İçin Tasarlandım. Butonları Kullanarak Botu Yönetebilirsin.",
+                    buttons=(                  
+		       
+                       [Button.inline("📚 Komutlar", data="help")],               
+                      [Button.url('📮 Beni Gruba Ekle', f"https://t.me/{bot_username}?startgroup=a")],
+                      [Button.url('👤 Sahibim', f"https://t.me/{owner}")],
+		                  [Button.url('👨🏻‍💻 Developers', 'https://t.me/rahmetiNC')],
 
-    await event.reply(
-        f"👋 Merhaba {user.first_name}, **{bot_name}!**\n\n"
-        "⭐️ Benim Sayemde Gruptaki Üyeleri Kolayca Etiketleye Bilirsiniz, "
-        "Bir Çok İşlevsel Komutlarım Vardır Hepsi Size Hizmet Vermek İçindir.\n\n"
-        "⚙️ Butonları Kullanarak Botu Yönetebilirsin, "
-        "Komutları Kullanmak İçin Grubuna Ekleyip Boş Yetki Vermen Yeterlidir.",
-        buttons=[
-            [Button.inline("📚 Komutlar", data="help")],
-            [Button.url('👨‍💻 Developers, 'https://t.me/lusttqw')],
-            [Button.url('🤖 Channel', 'https://t.me/laisbots')],
-        ],
-        link_preview=False
-    )
+                    ),
+                    link_preview=False
+                   )
 
 @client.on(events.callbackquery.CallbackQuery(data="etiket"))
 async def help(event):
@@ -96,21 +137,17 @@ async def help(event):
 
 @client.on(events.callbackquery.CallbackQuery(data="start"))
 async def help(event):
-    user = await event.client.get_entity(event.sender_id)
+    await event.edit(f"❤️ Merhaba Ben **Sirius Tagger**\n🏷 Gruplarda Kullanıcıları Etiketlemek İçin Tasarlandım. Butonları Kullanarak Botu Yönetebilirsin.", buttons=(
 
-    await event.edit(
-      f"👋 Merhaba {user.first_name}, **{bot_name}!**\n\n"
-        "⭐️ Benim Sayemde Gruptaki Üyeleri Kolayca Etiketleye Bilirsiniz, "
-        "Bir Çok İşlevsel Komutlarım Vardır Hepsi Size Hizmet Vermek İçindir.\n\n"
-        "⚙️ Butonları Kullanarak Botu Yönetebilirsin, "
-        "Komutları Kullanmak İçin Grubuna Ekleyip Boş Yetki Vermen Yeterlidir.",
-        buttons=[
-            [Button.inline("📚 Komutlar", data="help")],
-            [Button.url('👨‍💻 Developers, 'https://t.me/@lusttqw')],
-            [Button.url('🤖 Channel', 'https://t.me/laisbots')],
-        ],
-        link_preview=False
-    )
+                   
+                  [
+                        [Button.inline("📚 Komutlar", data="help")],               
+                      [Button.url('📮 Beni Gruba Ekle', f"https://t.me/{bot_username}?startgroup=a")],
+                      [Button.url('👤 Sahibim', f"https://t.me/{owner}")],
+		                  [Button.url('👨🏻‍💻 Developer', 'https://t.me/rahmetiNC')],
+                    ]
+                 ),
+               link_preview=False)   
 
 @client.on(events.callbackquery.CallbackQuery(data="ek"))
 async def help(event):
